@@ -125,8 +125,9 @@
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
-            <version>2.4.0-b180608.0325</version>
+            <version>2.3.0</version>
         </dependency>
+
         <dependency>
             <groupId>javax.activation</groupId>
             <artifactId>activation</artifactId>
@@ -368,6 +369,11 @@
     </licenses>
 
     <repositories>
+        <repository>
+            <id>releases.java.net</id>
+            <url>http://maven.java.net/content/repositories/releases/</url>
+            <layout>default</layout>
+        </repository>
         <repository>
             <id>jvnet-nexus-staging</id>
             <url>http://maven.java.net/content/repositories/staging/</url>
