@@ -8,3 +8,4 @@ ENV JVM_OPTS=${JVM_OPTS}
 CMD java ${JVM_OPTS} -jar app.jar
 
 
+
