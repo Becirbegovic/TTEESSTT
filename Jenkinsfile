@@ -1,16 +1,46 @@
-#!groovy
 pipeline {
-    agent none
-   stages {
-    stage('Maven Install') {
+  agent none
+  stages {
+    stage('verify maven:3.6.0-jdk-8') {
       agent {
-       docker {
-         image 'maven:3.5.0'
-     }
+        docker {
+          image 'maven:3.6.0-jdk-8'
+        }
+      }
+      steps {
+          sh 'mvn -v'
+      }
+    }
+    stage('verify maven:3.6.0-jdk-11') {
+      agent {
+        docker {
+          image 'maven:3.6.0-jdk-11'
+        }
+      }
+      steps {
+          sh 'mvn -v'
+      }
+    }
+        stage('verify gradle:5.3.1-jdk8') {
+      agent {
+        docker {
+          image 'gradle:5.3.1-jdk8'
+        }
+      }
+      steps {
+          sh 'gradle -v'
+      }
+    }
+    stage('verify gradle:5.3.1-jdk11') {
+      agent {
+        docker {
+          image 'gradle:5.3.1-jdk11'
+        }
+      }
+      steps {
+          sh 'gradle -v'
+      }
+    }
+
   }
-  steps {
-       sh 'mvn clean install'
-       }
-     }
-   }
- }
+}
